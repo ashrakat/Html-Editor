@@ -1,0 +1,32 @@
+<head>
+  <title>sharedDocument</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Home</a>
+    </div>
+  </nav> <!-- END OF NAV COMPONANT-->
+  <div class="container css-margin-top">
+    <div class = "row h-100 p-3">
+     <div class = "col-md-6">
+       <h1>The editor!</h1>
+       {{> editor}}
+     </div> <!-- END OF COLUMN CLASS 'the first column that takes 6 grid in medium screens' -->
+     <div class = "col-md-6">
+       <h1>Browser view!</h1>
+       {{> viewer}}
+     </div> <!-- END OF COLUMN CLASS 'the second column that takes 6 grid in medium screens' -->
+   </div> <!-- END OF ROW CLASS-->
+  </div> <!--END OF CONTAINER DEV COMPONANT -->
+</body>
+
+<template name="editor">
+  {{>sharejsCM docid = doc_id onRender = config  id = 'editor'}}
+</template> <!-- END OF 'editor' TEMPELATE -->
+
+<template name="viewer">
+  <iframe id='viewer_content'>
+  </iframe>
+</template> <!-- END OF 'viewer' TEMPELATE -->
